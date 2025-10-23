@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import useFetchMovies from '../Hooks/fetchmovies'
-import { getUniqueGenres } from '../API/api'
+import { getUniqueGenres } from '../utils/api'
 import SearchBar from '../Components/searchBar'
 import CategoryFilter from '../components/CategoryFilter'
 import MovieCard from '../Components/movieCard'

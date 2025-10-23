@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useFavorites } from '../Hooks/useFavorites'
 
 const MovieCard = ({ movie }) => {
   const navigate = useNavigate()

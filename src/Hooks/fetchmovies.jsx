@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { api } from '../API/api';
+import { api } from '../utils/api';
 
 const useFetchMovies = () => {
   const [movies, setMovies] = useState([]);
