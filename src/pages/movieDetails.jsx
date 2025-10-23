@@ -109,7 +109,7 @@ const MovieDetails = () => {
             </div>
           )}
 
-          {/* CHANGED: Updated favorite button to use heart icon instead of text */}
+          {/* made favorite an icon */}
           <button
             className={`flex items-center gap-2 px-6 py-3 rounded-lg font-semibold transition-colors ${
               isFavorite(movie.id) 
