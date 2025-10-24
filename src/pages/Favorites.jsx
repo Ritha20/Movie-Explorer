@@ -15,8 +15,8 @@ const Favorites = () => {
       </div>
 
       {favorites.length === 0 ? (
-        <div className="text-center py-16 text-gray-400 text-xl">
-          You haven't added any movies to favorites yet.
+        <div className="text-center py-16 mt-30 text-gray-400 text-sm">
+          No movies found.
         </div>
       ) : (
        
