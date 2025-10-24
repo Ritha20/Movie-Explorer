@@ -2,7 +2,7 @@ import react from 'react'
 
 const Footer = () =>{
     return(
-        <footer className="bg-cyan-950 py-6 mt-8">
+      <footer className="bg-gray-200 dark:bg-gray-800 py-6 mt-8 transition-colors duration-300">
             <div className="container mx-auto px-4 text-center">
               <p className="text-gray-300 text-sm">
                  &copy; 2025MovieExplorer. All rights reserved
