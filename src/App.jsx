@@ -1,25 +1,28 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
-import Footer from './Components/Footer'
+import Footer from './components/Footer'
 import Home from './pages/Home'
-import MovieDetails from './pages/movieDetails'
+import MovieDetails from './pages/MovieDetails'
 import Favorites from './pages/Favorites'
 import { FavoritesProvider } from './Hooks/useFavorites'
+import { useTheme } from './Context/ThemeContext'
 
 function App() {
+  const { isDarkMode } = useTheme()
+
   return (
     <FavoritesProvider>
-      <div className="min-h-screen bg-dark text-white">
+      <div className={`min-h-screen transition-colors duration-300 ${isDarkMode ? 'dark bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
         <Navbar />
-        <main className="container mx-auto px-4 py-8">
+        <main className="container mx-auto px-4 py-8 flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/movie/:id" element={<MovieDetails />} />
             <Route path="/favorites" element={<Favorites />} />
           </Routes>
         </main>
-        <Footer/>
+        <Footer />
       </div>
     </FavoritesProvider>
   )
