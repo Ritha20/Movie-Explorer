@@ -2,7 +2,7 @@ import React, { useState, useMemo } from 'react'
 import useFetchMovies from '../Hooks/fetchmovies'
 import { getUniqueGenres } from '../utils/api'
 import SearchBar from '../Components/searchBar'
-import CategoryFilter from '../Components/CategoryFilter'
+import CategoryFilter from '../Components/categoryFilter'
 import MovieCard from '../Components/MovieCard'
 import HeroCarousel from '../Components/HeroCarousel'
 
