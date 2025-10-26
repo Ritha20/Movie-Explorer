@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react'
 import useFetchMovies from '../Hooks/fetchmovies'
 import { getUniqueGenres } from '../utils/api'
-import SearchBar from '../Components/SearchBar'
+import SearchBar from '../Components/searchBar'
 import CategoryFilter from '../Components/CategoryFilter'
 import MovieCard from '../Components/MovieCard'
 import HeroCarousel from '../Components/HeroCarousel'
@@ -54,7 +54,7 @@ const Home = () => {
       {/* Movies Section */}
       <section id="movies-section" className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <SearchBar 
+          <SearchBar
             searchTerm={searchTerm} 
             onSearchChange={setSearchTerm} 
           />
