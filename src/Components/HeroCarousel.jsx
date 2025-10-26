@@ -95,7 +95,7 @@ const HeroCarousel = ({ featuredMovies }) => {
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => navigate(`/movie/${currentMovie.id}`)}
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-red-700 hover:bg-red-800 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
               >
                 View Details
               </button>
