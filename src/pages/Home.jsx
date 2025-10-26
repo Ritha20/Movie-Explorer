@@ -3,7 +3,7 @@ import useFetchMovies from '../Hooks/fetchmovies'
 import { getUniqueGenres } from '../utils/api'
 import SearchBar from '../Components/searchBar'
 import CategoryFilter from '../Components/categoryFilter'
-import MovieCard from '../Components/MovieCard'
+import MovieCard from '../Components/movieCard'
 import HeroCarousel from '../Components/HeroCarousel'
 
 const Home = () => {
