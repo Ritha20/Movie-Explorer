@@ -9,7 +9,7 @@ const HeroCarousel = ({ featuredMovies }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % featuredMovies.length)
-    }, 5000) // Change slide every 5 seconds
+    }, 3000) // Change slide every 3 seconds
 
     return () => clearInterval(interval)
   }, [featuredMovies.length])
@@ -29,8 +29,7 @@ const HeroCarousel = ({ featuredMovies }) => {
   if (!featuredMovies || featuredMovies.length === 0) return null
 
   const currentMovie = featuredMovies[currentSlide]
-  const posterUrl = currentMovie.image?.original || currentMovie.image?.medium || 'https://via.placeholder.com/1200x600/1a1a1a/ffffff?text=No+Image'
-
+  const posterUrl = currentMovie.image?.original || currentMovie.image?.medium || 'https://www.google.com/search?sca_esv=ef29957d23e94eec&sxsrf=AE3TifPJftIO2Vve-DaQGyO1YRsJLA1GcA:1761756838796&udm=2&fbs=AIIjpHxU7SXXniUZfeShr2fp4giZ1Y6MJ25_tmWITc7uy4KIeoJTKjrFjVxydQWqI2NcOha3O1YqG67F0QIhAOFN_ob1xGdzU5Cnyn-oUzTul2B5TXRzAeIy3FI7wzggwHPeZE6A_YjAVf9uE0nNdQlAcGqqj5AFYH9gBj6Gco72idWfDSHyBqtc2Mn9Wkv0Fc0g3se9_tqrCpEpg1Mk49vFKkgil7s-SQ&q=arrow+movie++images&sa=X&ved=2ahUKEwiNj7rU78mQAxUDUUEAHTmpKDcQtKgLegQIEBAB&biw=1440&bih=812&dpr=2#vhid=8aJ33hXi4OhydM&vssid=mosaic'
   return (
     <section className="relative h-96 md:h-[500px] lg:h-[600px] overflow-hidden">
       
@@ -49,53 +48,29 @@ const HeroCarousel = ({ featuredMovies }) => {
       <div className="absolute inset-0 bg-opacity-60"></div>
       
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end pb-8 md:pb-12 lg:pb-16">
-        <div className="container mx-auto px-4">
+      <div className="relative z-10 h-full flex flex-col justify-end pb-8 md:pb-16 lg:pb-4">
+        <div className="container mx-auto px-20">
           <div className="max-w-2xl">
             {/* Movie Title */}
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-sm md:text-l lg:text-xl font-bold text-white mb-3 leading-tight">
               {currentMovie.name}
             </h1>
             
             {/* Movie Details */}
             <div className="flex flex-wrap items-center gap-4 mb-4 text-black">
-              {/* Rating */}
-              {currentMovie.rating?.average && (
-                <div className="flex items-center bg-yellow-500 bg-opacity-90 px-3 py-1 rounded-full">
-                  <span className="text-sm font-semibold">⭐ {currentMovie.rating.average}/10</span>
-                </div>
-              )}
-              
-              {/* Year */}
-              {currentMovie.premiered && (
-                <div className="bg-white bg-opacity-20 px-3 py-1 rounded-full">
-                  <span className="text-sm">{new Date(currentMovie.premiered).getFullYear()}</span>
-                </div>
-              )}
-              
-              {/* Genres */}
               {currentMovie.genres && currentMovie.genres.length > 0 && (
-                <div className="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                <div className="bg-white bg-opacity-20 px-1 py-1 rounded-full">
                   <span className="text-sm">{currentMovie.genres.slice(0, 2).join(', ')}</span>
                 </div>
               )}
             </div>
             
-            {/* Summary - Limited to 2 lines */}
-            {currentMovie.summary && (
-              <div 
-                className="text-gray-200 text-lg mb-6 line-clamp-2 leading-relaxed"
-                dangerouslySetInnerHTML={{ 
-                  __html: currentMovie.summary.replace(/<[^>]*>/g, '').slice(0, 150) + '...' 
-                }}
-              />
-            )}
             
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <button
                 onClick={() => navigate(`/movie/${currentMovie.id}`)}
-                className="bg-red-700 hover:bg-red-800 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-red-700 hover:bg-red-800 text-white px-1 py-1 mx-1 my-1 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105"
               >
                 View Details
               </button>
@@ -110,7 +85,7 @@ const HeroCarousel = ({ featuredMovies }) => {
                     }
                   }, 100)
                 }}
-                className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px-8 py-3 rounded-lg font-semibold text-lg transition-all duration-300"
+                className="border-2 border-white hover:bg-white hover:text-gray-900 text-white px- py-3 rounded-lg font-semibold text-lg transition-all duration-300"
               >
                 Explore All Movies
               </button>

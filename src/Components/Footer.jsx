@@ -8,7 +8,7 @@ const Footer = () => {
           &copy; 2024 MovieExplorer. All rights reserved.
         </p>
         <p className="text-gray-500 dark:text-gray-400 text-xs mt-2">
-          Built with React & Tailwind CSS
+          Enjoy our Chanel
         </p>
       </div>
     </footer>

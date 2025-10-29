@@ -17,7 +17,7 @@ const Home = () => {
   const featuredMovies = useMemo(() => {
     return movies
       .filter(movie => movie.image?.original || movie.image?.medium)
-      .slice(0, 5)
+      .slice(0, 10)
   }, [movies])
 
   const filteredMovies = useMemo(() => {
